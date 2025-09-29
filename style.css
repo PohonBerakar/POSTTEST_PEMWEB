@@ -7,16 +7,25 @@
 :root {
     --color-bg: #f7f7f7;
     --color-primary: #1a1a2e;
-    --color-accent: #00adb5;
+    --color-accent: #858d8e;
     --color-text: #333;
-    --color-light: #fff;
+    --color-light: #f4f2f2;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-bg);
+    background: url("bg.jpg") center/cover no-repeat fixed;
     color: var(--color-text);
     line-height: 1.5;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(36, 35, 35, 0.7);
+    z-index: -1;
 }
 
 a {
@@ -124,7 +133,7 @@ a {
 }
 
 .btn-primary:hover {
-    background-color: #008f9f;
+    background-color: #697071;
 }
 
 @media (min-width: 768px) {
@@ -137,4 +146,25 @@ a {
     .site-main {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  display: none;
+}
+.nav-list li a.active {
+  border-bottom: 2px solid var(--color-accent);
+}
+.scroll-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+  display: none;
+}
+.nav-list li a.active {
+  border-bottom: 2px solid var(--color-accent);
 }
